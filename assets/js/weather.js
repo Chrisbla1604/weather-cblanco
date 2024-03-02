@@ -89,7 +89,6 @@ let loadWeekForecastData = (a) => {
 
     let plantilla_final="";
 
-    
     for(let i=0; i<forecast_week.length;i++)
     {
         let plantilla_semanal = `<li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
@@ -111,5 +110,18 @@ let loadWeekForecastData = (a) => {
 		
 }
 
-loadDayForecastData();
-loadWeekForecastData();
+
+
+document.addEventListener("DOMContentLoaded", (event) => {
+    
+    loadDayForecastData();
+
+});
+
+let click_boton= document.getElementById("loadinfo");
+
+click_boton.addEventListener('click', (event) => {
+    
+    loadWeekForecastData();
+
+});
